@@ -1,0 +1,15 @@
+package com.app;
+
+import static com.app.factory.Factory.logger;
+
+public class App {
+
+	public static void main(String[] args) {
+        logger.info("App started");
+        
+        
+        
+        
+        
+	}
+}

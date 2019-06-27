@@ -1,0 +1,40 @@
+package com.app.config;
+
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp.BasicDataSource;
+import org.omg.CORBA.Environment;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+import com.app.repository.AccountRepository;
+import com.app.service.UPITxrService;
+
+@Configuration
+@PropertySource("classpath:db.properties")
+public class DatasourceConfiguration {
+	
+	@Autowired
+	private AccountRepository AccountRepository;
+
+	@Autowired
+	private org.springframework.core.env.Environment env;
+
+	@Bean
+	public DataSource getDataSource() {
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(env.getProperty("db.driver"));
+		dataSource.setUrl("db.url");
+		dataSource.setUsername("db.user");
+		dataSource.setPassword("db.password");
+		return dataSource;
+	}
+	
+	@Bean
+	public UPITxrService upiTxrService() {
+		UPITxrService upiService = new UPITxrService();
+		upiService.setAccRepo();
+	}
+}

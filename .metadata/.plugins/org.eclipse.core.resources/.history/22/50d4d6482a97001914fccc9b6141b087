@@ -1,0 +1,18 @@
+package com.app;
+
+import static com.app.factory.Factory.logger;
+
+import com.app.service.TxrService;
+
+public class App {
+
+	public static void main(String[] args) {
+        logger.info("App started");
+        
+        TxrService txr = new TxrService();
+        txr.transfer("2", "1",2000.00);
+        
+        
+        
+	}
+}

@@ -1,0 +1,6 @@
+1561456130893	Delete element
+1561458117042	Rename resource 'acccount-service.xml'
+1561459542739	Rename type 'TxrService'
+1561459583173	Extract interface 'Txr'
+1561459590080	Delete elements
+1561459637116	Extract interface 'TxrService'

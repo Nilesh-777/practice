@@ -1,0 +1,8 @@
+package com.app.service;
+
+public class TxrService {
+	public boolean transfer(String fromAcNum, String toAccNum) {
+
+		return true;
+	}
+}

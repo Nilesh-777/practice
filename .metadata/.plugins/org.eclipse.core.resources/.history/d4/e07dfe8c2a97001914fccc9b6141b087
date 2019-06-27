@@ -1,0 +1,10 @@
+package com.app.service;
+
+import static com.app.factory.Factory.logger;
+
+public class TxrService {
+	public boolean transfer(String fromAcNum, String toAccNum,double balance) {
+         logger.info("Transfer initiated");
+		return true;
+	}
+}

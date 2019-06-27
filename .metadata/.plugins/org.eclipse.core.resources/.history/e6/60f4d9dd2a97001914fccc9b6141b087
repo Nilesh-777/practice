@@ -1,0 +1,19 @@
+package com.app.service;
+
+import static com.app.factory.Factory.logger;
+
+import com.app.repository.AccountRepository;
+
+public class TxrService {
+	AccountRepository accRepo;
+
+	public TxrService(AccountRepository accRepo) {
+		this.accRepo = accRepo;
+	}
+
+	public boolean transfer(String fromAcNum, String toAccNum, double balance) {
+		logger.info("Transfer initiated");
+
+		return true;
+	}
+}

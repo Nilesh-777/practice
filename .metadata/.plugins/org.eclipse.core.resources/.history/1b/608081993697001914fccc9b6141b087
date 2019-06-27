@@ -1,0 +1,30 @@
+package com.app.service;
+
+import static com.app.factory.Factory.logger;
+
+import com.app.model.Account;
+import com.app.repository.AccountRepository;
+
+public class UPITxrService {
+	AccountRepository accRepo;
+	
+	public UPITxrService() {
+	}
+
+	public UPITxrService(AccountRepository accRepo) {
+		this.accRepo = accRepo;
+	}
+
+	
+	public boolean transfer(String fromAccNum, String toAccNum, double balance) {
+		logger.info("Transfer initiated");
+        Account fromAcc = accRepo.load(fromAccNum);
+        Account toAcc   = accRepo.load(toAccNum);
+        
+        accRepo.update(fromAccNum,fromAcc.getBalance()-balance);
+		accRepo.update(toAccNum, toAcc.getBalance() + balance);
+        
+        
+		return true;
+	}
+}

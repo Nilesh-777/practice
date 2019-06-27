@@ -1,0 +1,5 @@
+package com.app.factory;
+
+public class Factory {
+
+}

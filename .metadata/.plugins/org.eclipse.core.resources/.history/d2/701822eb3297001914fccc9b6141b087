@@ -1,0 +1,31 @@
+package com.app;
+
+import static com.app.factory.Factory.logger;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.app.service.TxrService;
+
+
+public class App {
+
+	public static void main(String[] args) {
+        logger.info("App started");
+        
+		ConfigurableApplicationContext context = null;
+		context = new ClassPathXmlApplicationContext("account-service.xml");
+        
+		TxrService txr = new TxrService();
+		
+      //  txr.transfer("2", "1",2000.00);
+        
+        logger.info("App destroyed");
+        
+	}
+
+	private static TxrService new TxrService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

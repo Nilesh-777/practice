@@ -1,0 +1,17 @@
+package com.app.repository;
+
+import com.app.model.Account;
+
+public class JpaAccountRepository implements AccountRepository {
+
+	@Override
+	public Account load(String accNum) {
+		return null;
+	}
+
+	@Override
+	public Account update(String accNum, double balance) {
+		return null;
+	}
+
+}

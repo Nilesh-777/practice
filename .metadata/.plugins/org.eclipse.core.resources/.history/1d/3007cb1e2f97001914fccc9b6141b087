@@ -1,0 +1,15 @@
+package com.app.repository;
+
+import com.app.model.Account;
+
+public class JDBCAccountRepository implements AccountRepository {
+
+	public Account load(String accNum) {
+		return null;
+	}
+
+	public Account update(String accNum,double balance) {
+		return null;
+	}
+
+}

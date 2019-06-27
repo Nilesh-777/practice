@@ -1,0 +1,22 @@
+package com.app.repository;
+
+import com.app.model.Account;
+import javax.sql.DataSource;
+
+public class JDBCAccountRepository implements AccountRepository {
+	
+	DataSource dataSource;
+	
+	public JDBCAccountRepository(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
+	public Account load(String accNum) {
+		return null;
+	}
+
+	public Account update(String accNum,double balance) {
+		return null;
+	}
+
+}
